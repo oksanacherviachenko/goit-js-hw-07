@@ -25,6 +25,31 @@ const images = [
   }
 ];
 
+const style = document.createElement('style');
+style.textContent = `
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .gallery li {
+    flex: 1 1 calc(33.333% - 32px); 
+    max-width: 300px; 
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+`;
+document.head.appendChild(style);
+
 const galleryElement = document.querySelector('.gallery');
 
 const galleryMarkup = images.map(({ url, alt }) => `
